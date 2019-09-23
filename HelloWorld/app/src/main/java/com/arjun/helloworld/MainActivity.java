@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button childButton;
+    private Button cameraButton;
     private TextView textView;
 
     @Override
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         childButton = findViewById(R.id.childButton);
         childButton.setBackgroundColor(getColor(R.color.colorAccent));
+        cameraButton = findViewById(R.id.cameaButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ChildActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Camera_Activity.class);
                 startActivity(intent);
             }
         });
